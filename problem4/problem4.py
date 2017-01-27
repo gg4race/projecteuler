@@ -1,3 +1,5 @@
+import math
+
 def main():
     # loop through pairs of integers and return largest palindrome product
 
@@ -6,13 +8,8 @@ def main():
     def isPalindrome(a, b):
 
         product = str(a * b)
-        endIndex = 0
+        endIndex = len(product)/2
         isPalindrome = True
-
-        if (len(product) % 2 == 0):
-            endIndex = int(len(product) / 2)
-        else:
-            endIndex = int((len(product) - 1) / 2)
 
         for i in range(0, endIndex):
             if (product[i] != product[len(product) - i - 1]):
@@ -34,6 +31,12 @@ def main():
         a -= 1
 
     print(palindrome)
+''' more pro solution
+    def ispal(n):
+        s = str(n)
+        return all(s[i] == s[len(s)-1-i] for i in xrange(len(s) / 2))
+
+    print max(a * b for a in xrange(100, 1000) for b in xrange(100, 1000) if ispal(a * b))'''
 
 
 if __name__ == '__main__':
