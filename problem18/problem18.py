@@ -15,19 +15,10 @@ def main():
            [63, 66, 4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31],
            [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23]]
 
-    def findMax(currRow, x, y):
-        if arr[currRow][x] < arr[currRow][y]:
-
-            maxChild = y
-            print('curr row is ' + str(currRow) + ' and max child is ' + str(maxChild))
-            return maxChild
-        elif arr[currRow][x] == arr[currRow][y]:
-            currRow += 1
-            return findMax(currRow, findMax(currRow, x, y), findMax(currRow, y, y + 1))
-        else:
-            maxChild = x
-            print('curr row is ' + str(currRow) + ' and max child is ' + str(maxChild))
-            return maxChild
+    def findMax(row, col):
+        if row >= len(arr):
+            return 0
+        return arr[row][col] + max(findMax(row + 1, col), findMax(row + 1, col + 1))
 
     sum = arr[0][0]
     index = 0
@@ -36,7 +27,7 @@ def main():
 
       sum = sum + arr[i][index]'''
 
-    print(findMax(8, index, index + 1))
+    print(findMax(0, 0))
 
 
 if __name__ == '__main__':

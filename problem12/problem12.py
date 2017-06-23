@@ -3,12 +3,10 @@ def main():
 
     def findNumberOfFactors(num):
         factors = 2
-        for i in range(2, int(num ** 0.5)):
+        for i in range(2, int(num ** 0.5) + 1):
             if num % i == 0:
-                factors += 2
+                factors += 2 if i * i != num else 1
 
-        if not (math.sqrt(num) - int(math.sqrt(num))):
-            factors += 1
         return factors
 
     found = False

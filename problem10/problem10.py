@@ -7,7 +7,7 @@ def main():
                 yield i   #yield creates iterator, good for large set of values read only once
                 multiples.update(range(i * i, n + 1, i))
 
-    print(sum(list(eratosthenes2(2000000))))
+    print(sum(eratosthenes2(2000000)))
 
 
 if __name__ == '__main__':

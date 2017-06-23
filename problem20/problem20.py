@@ -7,7 +7,7 @@ def main():
         product *= n
         n -= 1
 
-    print(sum(list(map(int, list(str(product))))))
+    print(sum(map(int, str(product))))
 
 
 if __name__ == '__main__':
